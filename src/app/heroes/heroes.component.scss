@@ -1,0 +1,48 @@
+.hero-wrapper {
+  height: calc(100vh - 65px);
+  background: #ebe8e873;
+  border: 2px solid black;
+  overflow: auto;
+}
+.hero-background {
+  background: #fffad0;
+  li {
+    cursor: pointer;
+    margin: 8px;
+    list-style-type: none;
+    background-color: #ffc59f;
+    width: 50%;
+    span {
+      display: inline-block;
+      width: 10%;
+      color: white;
+      padding: 7px;
+      background-color: #f88436;
+      border-radius: 50rem 0 0 50rem;
+    }
+  }
+  li:hover {
+    position: relative;
+    left: 2px;
+    top: 1px;
+    color: #b83100;
+    background-color: #fda56ad2;
+  }
+  .selected {
+    position: relative;
+    left: 2px;
+    top: 1px;
+    color: #b8860b;
+    background-color: #fdfb6ad2;
+    span{
+        background-color: #dba800;
+    }
+    &:hover {
+      color: rgb(184, 149, 61);
+      background-color: #f7f5a8d2;
+      span{
+        background-color: #ffc400;
+    }
+    }
+  }
+}

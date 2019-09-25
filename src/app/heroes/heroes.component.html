@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="hero-wrapper">
+        <div class="text-center">
+            <h3>Hero's Component</h3>
+        </div>
+        <div class="container border border-info bg-light rounded-lg">
+            <h4>{{heroObject.name | uppercase}} Details</h4>
+            <div class="form-row">
+                <div class="col">
+                    <label for="Id">ID : </label><span id="Id">{{heroObject.id}}</span>
+                </div>
+                <div class="col">
+                    <label for="heroName">Name: </label><input id="heroName" type="text" [(ngModel)]="heroObject.name"
+                        placeholder="Hero Name">
+                </div>
+                <div class="col">
+                    <label for="spec">Speciality: </label> <span id="spec">{{heroObject.speciality}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 container border border-warning hero-background rounded">
+            <div class="text-center">
+                <h4>Hero List</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li *ngFor="let hero of heros" class="rounded-pill" (click)="onSelect(hero)"
+                            [class.selected]="hero === selectedHero">
+                            <span>
+                                {{hero.id}}
+                            </span>
+                            {{hero.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6" *ngIf="selectedHero">
+                    <div class="container border border-info bg-light rounded-lg">
+                        <h4>{{selectedHero.name | uppercase}} Details</h4>
+                        <div class="form-row">
+                            <label for="heroName">Name: </label><input id="heroName" type="text"
+                                [(ngModel)]="selectedHero.name" placeholder="Hero Name">
+                        </div>
+                        <div class="form-row">
+                            <label for="spec">Speciality: </label> <span id="spec">{{selectedHero.speciality}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
