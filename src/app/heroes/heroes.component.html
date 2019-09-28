@@ -34,17 +34,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6" *ngIf="selectedHero">
-                    <div class="container border border-info bg-light rounded-lg">
-                        <h4>{{selectedHero.name | uppercase}} Details</h4>
-                        <div class="form-row">
-                            <label for="heroName">Name: </label><input id="heroName" type="text"
-                                [(ngModel)]="selectedHero.name" placeholder="Hero Name">
-                        </div>
-                        <div class="form-row">
-                            <label for="spec">Speciality: </label> <span id="spec">{{selectedHero.speciality}}</span>
-                        </div>
-                    </div>
+                <div class="col-md-6" >
+                    <app-hero-detail [heroDetail]="selectedHero" ></app-hero-detail>
                 </div>
             </div>
         </div>

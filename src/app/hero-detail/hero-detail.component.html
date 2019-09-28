@@ -1,0 +1,13 @@
+<div class="container border border-info bg-light rounded-lg" *ngIf="heroDetail">
+    <div class="text-center">
+        <h3>Hero Detail's Component</h3>
+    </div>
+    <h4>{{heroDetail.name | uppercase}} Details</h4>
+    <div class="form-row">
+        <label for="heroName">Name: </label><input id="heroName" type="text" [(ngModel)]="heroDetail.name"
+            placeholder="Hero Name">
+    </div>
+    <div class="form-row">
+        <label for="spec">Speciality: </label> <span id="spec">{{heroDetail.speciality}}</span>
+    </div>
+</div>
