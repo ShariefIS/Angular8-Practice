@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-2">
     <div class="hero-wrapper">
         <div class="text-center">
             <h3>Hero's Component</h3>
@@ -25,17 +25,24 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul>
-                        <li *ngFor="let hero of heros" class="rounded-pill" (click)="onSelect(hero)"
-                            [class.selected]="hero === selectedHero">
-                            <span>
-                                {{hero.id}}
-                            </span>
+                        <li *ngFor="let hero of heros" class="rounded-pill" [class.selected]="hero === selectedHero"
+                            (click)="onSelect(hero)">
+                            <span> {{hero.id}} </span>
                             {{hero.name}}
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6" >
-                    <app-hero-detail [heroDetail]="selectedHero" ></app-hero-detail>
+                <div class="col-md-6" *ngIf="selectedHero">
+                    <!-- <app-hero-detail [heroDetail]="selectedHero"></app-hero-detail>  -->
+
+                    <div class="border border-info bg-light rounded-lg mt-2 p-3 d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            {{selectedHero.name}}&nbsp; Details
+                        </div>
+                        <button class="btn btn-info" routerLink="/detail/{{selectedHero.id}}"> View
+                            Details</button>
+                    </div>
+
                 </div>
             </div>
         </div>

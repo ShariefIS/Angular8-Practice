@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="text-center">
+        <h3>Top Heroes</h3>
+    </div>
+    <div class=" d-flex justify-content-between p-2">
+        <a *ngFor="let hero of heros" routerLink="/detail/{{hero.id}}">
+            <div class="rounded bg-info p-5 text-white text-center">
+                <h4>{{hero.name}}</h4>
+            </div>
+        </a>
+    </div>
+</div>

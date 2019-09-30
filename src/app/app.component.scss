@@ -1,0 +1,10 @@
+nav {
+  a {
+    &.active {
+      &.bg-light {
+        background-color: #609dda !important;
+        color: white;
+      }
+    }
+  }
+}
